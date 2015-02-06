@@ -14,6 +14,7 @@ provider:
 
 services:
   backup: '*'
+  supervisord: '*'
   nginx: '*'
   mongodb: '*'
   nodejs: '*'
@@ -28,7 +29,7 @@ configuration:
   #   path: '/opt/backup/%Y/%m/%d/daily'
 
   mongodb:
-    # Define your MySQL users
+    # Define your MongoDB users
     users:
       - name: meteor
         databases: 

@@ -36,15 +36,12 @@ steps:
       cd /opt/{{ app_name }}/bundle/programs/server &&
       npm install
   
-  # Prepare the app
-  - run: devops nodejs app add
+  # Prepare the app to run using supervisord
+  - run: devops supervisord program add
     options: 
       name: "{{ app_name }}"
-      root: /opt/{{ app_name }}/bundle
-      script: main.js
-      node_env: prod
-      user: devops
-      extra_env: >
-        PORT=3000
-        MONGO_URL=mongodb://meteor:{{ nodes.meteor.configuration.mongodb.users.meteor.password }}@localhost:27017/{{ database_name }}
-        ROOT_URL=http://{{ domain }}
+      user: root #python requires sudo/root to run properly
+      autostart: true
+      command: node /opt/{{ app_name }}/bundle/main.js
+      env: NODE_ENV=prod,PORT=3000,ROOT_URL=http://{{ domain }},MONGO_URL='mongodb://meteor:{{ nodes.meteor.configuration.mongodb.users.meteor.password }}@localhost:27017/{{ database_name }}'
+      
