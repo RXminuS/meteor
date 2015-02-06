@@ -34,7 +34,6 @@ If you have any question, come ask us on the [devo.ps chat](https://www.hipchat.
 
 - [Nodes in devo.ps](http://docs.devo.ps/manual/nodes)
 - [Tasks in devo.ps](http://docs.devo.ps/manual/tasks)
-
 - [Backups in devo.ps](http://docs.devo.ps/services/backup/)
 - [Nginx in devo.ps](http://docs.devo.ps/services/nginx/)
 - [MongoDB in devo.ps](http://docs.devo.ps/services/mongodb/)
