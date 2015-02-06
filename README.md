@@ -16,11 +16,15 @@ To deploy your app, you will need to navigate to the tasks page of the repo and 
 
 This setup contains one server (`nodes/meteor.yml`) with **Node.js**, **Meteor**, **MongoDB** and **Nginx**
 
-We have included as well a task (`tasks/meteor-build.yml`) that can be executed and will deploy your Meteor app.
+We have included several tasks to get you started quickly.
+
+First of all there is the task (`tasks/build-meteor.yml`) that can be executed and will deploy your Meteor app and uses Supervisord to ensure your app is automatically (re)started when necessary. It also contains an example to setup webhooks for automatic app deployment.
+
+In addition there is the task (`tasks/backup-meteor.yml`) that saves a backup of your MongoDB database and Meteor app in folders organised by date. The server (`nodes/meteor.yml`) contains an example on how to setup a similar service but only storing the latest (daily) backup.
+
+Feel free to extend the tasks to install any kind of Meteor app! Checkout the [gh-pages builder](https://github.com/devops-community/gh-pages) for some examples.
 
 The current repo provides a very simple setup. Hack at will!
-
-Feel free to extend the task and add the support for webhooks to install any kind of Meteor app! Checkout the [gh-pages builder](https://github.com/devops-community/gh-pages) for some examples.
 
 ## Questions?
 
@@ -30,3 +34,8 @@ If you have any question, come ask us on the [devo.ps chat](https://www.hipchat.
 
 - [Nodes in devo.ps](http://docs.devo.ps/manual/nodes)
 - [Tasks in devo.ps](http://docs.devo.ps/manual/tasks)
+
+- [Backups in devo.ps](http://docs.devo.ps/services/backup/)
+- [Nginx in devo.ps](http://docs.devo.ps/services/nginx/)
+- [MongoDB in devo.ps](http://docs.devo.ps/services/mongodb/)
+- [Supervisord in devo.ps](http://docs.devo.ps/services/supervisord/)
